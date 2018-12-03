@@ -104,8 +104,6 @@ public class Day03 {
 		// part 1
 		System.out.printf("Result of Part 1 with input data: %d%n", part1(data));
 		// Part 2
-		//List<String> testPart2 = Arrays.asList("abcde","fghij","klmno","pqrst","fguij","axcye","wvxyz");
-		//System.out.printf("Result of Part 2 with test data: %s | expected result: fgij%n", part2(testPart2));
 		System.out.printf("Result of Part 2 with input data: %d%n", part2(data));
 		
 	}
