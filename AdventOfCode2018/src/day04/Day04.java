@@ -51,7 +51,6 @@ public class Day04 {
 		}
 		
 		// analyze data
-//		Map<Integer, Integer> guardSleep = new HashMap<>();
 		int maxSleepTime = Integer.MIN_VALUE;
 		int maxGuardID = 0;
 		for(Entry<Integer, int[]> item : dutyCycle.entrySet()) {
@@ -65,7 +64,6 @@ public class Day04 {
 				maxSleepTime = sleepTime;
 				maxGuardID = guardID;
 			}
-//			guardSleep.put(guardID, sleepTime);
 		}
 		int[] times = dutyCycle.get(maxGuardID);
 		int maxTime = Integer.MIN_VALUE;
