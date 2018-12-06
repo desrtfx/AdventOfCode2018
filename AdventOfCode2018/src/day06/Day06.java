@@ -110,7 +110,7 @@ public class Day06 {
 		// part 1
 		System.out.printf("Result of Part 1 with input data: %d%n", part1(data));
 		
-		// Test part 2
+		// part 2
 		System.out.printf("Result of Part 2 with input data: %d%n", part2(data));
 		
 	}
