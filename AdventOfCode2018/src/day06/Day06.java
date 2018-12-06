@@ -72,13 +72,6 @@ public class Day06 {
 			areas.remove(grid[y][maxX]);
 		}
 		
-		//int biggest = Integer.MIN_VALUE;
-		//for(int item : areas.values()) {
-		//	if(biggest < item) {
-		//		biggest = item;
-		//	}
-		//}
-		
 		Optional<Integer> big = areas.values().stream().reduce(Integer::max);
 		
 		
@@ -114,16 +107,10 @@ public class Day06 {
 	}
 	
 	public static void main(String[] args) {
-		// Test data
-		//String testData = "dabAcCaCBAcCcaDA";
-		//System.out.printf("Result of Part 1 with test data: %d - expected 10%n", part1(testData));
-
 		// part 1
 		System.out.printf("Result of Part 1 with input data: %d%n", part1(data));
 		
 		// Test part 2
-		//System.out.printf("Result of Part 1 with test data: %d - expected 4%n", part2(testData));
-		// Part 2
 		System.out.printf("Result of Part 2 with input data: %d%n", part2(data));
 		
 	}
