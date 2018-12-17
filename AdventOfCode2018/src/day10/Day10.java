@@ -13,6 +13,21 @@ public class Day10 {
 	static class Star {
 		Point place;
 		Point speed;
+		
+		public Star() {
+			place = null;
+			speed = null;
+		}
+		
+		public Star(Star s) {
+			place = new Point(s.place);
+			speed = new Point(s.speed);
+		}
+		
+		public void tick() {
+			place.translate(speed.x, speed.y);
+		}
+		
 	}
 	
 	
@@ -33,6 +48,60 @@ public class Day10 {
 				data.add(s);
 			}
 		}
+	}
+	
+
+	
+	public static void part1() {
+		
+		// copy data
+		List<Star> stars = new ArrayList<>();
+		for(Star item : data) {
+			stars.add(new Star(item));
+		}
+		
+		int minDist = Integer.MAX_VALUE;
+		int generation = 0;
+		int xMin = Integer.MAX_VALUE;
+		int xMax = Integer.MIN_VALUE;
+		int xOffs;
+		
+		
+		// simulation
+		for(int i = 0; i < 1_000_000; i++) {
+			xMin = Integer.MAX_VALUE;
+			xMax = Integer.MIN_VALUE;
+			// One tick
+			for(Star s : stars) {
+				s.tick();
+				if(s.place.x < xMin) {
+					xMin = s.place.x;
+				}
+				if(s.place.x > xMax) {
+					xMax = s.place.x;
+				}
+			}
+			// get distance
+			int dist = Math.abs(xMax-xMin);
+			if(dist < minDist) {
+				minDist = dist;
+				generation = i;
+				xOffs = xMin;
+			}
+		}
+		
+		// reset
+		stars = new ArrayList<>();
+		for(Star item : data) {
+			stars.add(new Star(item));
+		}
+		
+		for(int i = 0; i <= generation; i++) {
+			for(Star s: stars) {
+				s.tick();
+			}
+		}
+		
 		
 		
 		
